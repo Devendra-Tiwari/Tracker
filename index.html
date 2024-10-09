@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="subject-page" class="page">
+        <h1></h1>
+        <div class="buttons">
+            <button onclick="backupData()">Backup Data</button>
+            <button onclick="document.getElementById('restore-file').click()">Restore Data</button>
+            <input type="file" id="restore-file" accept=".json" style="display: none;" onchange="restoreData(event)">
+        </div>
+        <div class="subjects">
+            <button onclick="showSubject('Physics')">Physics</button>
+            <button onclick="showSubject('PC')">PC</button>
+            <button onclick="showSubject('IOC')">IOC</button>
+            <button onclick="showSubject('OC')">OC</button>
+            <button onclick="showSubject('Botany')">Botany</button>
+            <button onclick="showSubject('Zoology')">Zoology</button>
+        </div>
+    </div>
+
+    <div id="chapter-page" class="page hidden">
+        <div class="header">
+            <button class="back" onclick="goBack('subject')">←</button>
+            <button class="add" onclick="addChapter()">+</button>
+        </div>
+        <h1 id="chapter-title"></h1>
+        <div id="chapters" class="chapters"></div>
+    </div>
+
+    <div id="lecture-page" class="page hidden">
+        <div class="header">
+            <button class="back" onclick="goBack('chapter')">←</button>
+            <button class="add" onclick="addLecture()">+</button>
+        </div>
+        <h1 id="lecture-title"></h1>
+        <div id="lectures" class="lectures"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
